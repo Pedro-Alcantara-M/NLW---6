@@ -19,6 +19,29 @@ Application to ask questions and highlight the most liked.
     REACT_APP_APP_ID= appId
   ```
 
+- Still in your firebase, go to the RealTime Database option and add the following rules:
+```
+{
+  "rules": {
+    "rooms": {
+      ".read": false,
+      ".write": "auth != null",
+      "$roomId": {
+        ".read": true,
+        ".write": "auth != null && (!data.exists() || data.child('authorId').val() == auth.id)",
+        "questions": {
+          ".read": true,
+          ".write": "auth != null && (!data.exists() || data.parent().child('authorId').val() == auth.id)",
+          "likes": {
+            ".read": true,
+            ".write": "auth != null && (!data.exists() || data.child('authorId').val() == auth.id)",  
+          }
+        }
+      }
+    }
+  }
+}
+```
 
 ## Functionalities:
 - You can sign in to the app using your google account. create rooms and share with others to ask questions.
