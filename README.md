@@ -1,4 +1,8 @@
-[https://github.com/Pedro-Alcantara-M/NLW---6](https://github.com/Pedro-Alcantara-M/NLW---6)
+# Letmeask App
+Application to ask questions and highlight the most liked.
+
+## Starting:
+- Download this repository using the command `git clone` [https://github.com/Pedro-Alcantara-M/NLW---6](https://github.com/Pedro-Alcantara-M/NLW---6)
 - After downloading and opening the program, type `npm install` to install the application's dependencies.
 -You can start the application using `npm start` and view it in the browser using [http://localhost:3000](http://localhost:3000)
 
